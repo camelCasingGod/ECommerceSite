@@ -20,13 +20,14 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { auth } from 'firebase';
 import { AuthService } from './auth.service';
 import { AuthGuard as AuthGuard } from './auth-guard.service';
 import { UserService } from './user.service';
 import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CategoryService } from './category.service';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CategoryService } from './category.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -70,7 +72,8 @@ import { CategoryService } from './category.service';
     AuthGuard,
     AdminAuthGuard,
     UserService,
-    CategoryService
+    CategoryService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
