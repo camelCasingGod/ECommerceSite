@@ -7,7 +7,7 @@ import { ProductService } from 'src/app/product.service';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit {
-  products$
+  products$;
 
   constructor(private productService: ProductService) {
 
